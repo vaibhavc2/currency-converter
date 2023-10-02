@@ -20,10 +20,10 @@ export const swapCurrency = ({
   convertedAmount,
   setAmount,
   setConvertedAmount
-}: paramTypes) => {
+}: paramTypes): void => {
   //
-  setFrom(from);
-  setTo(to);
+  setFrom(to);
+  setTo(from);
   setConvertedAmount(amount);
   setAmount(convertedAmount);
 };

@@ -39,7 +39,7 @@ const Home = () => {
                   currencyOptions={currencyOptions}
                   onAmountChange={setAmount}
                   onCurrencyChange={setFrom}
-                  selectCurrency="from"
+                  selectCurrency={from}
                   amountDisable={false}
                   currencyDisable={false}
                 />

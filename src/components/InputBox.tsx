@@ -1,4 +1,11 @@
-import { ComponentProps, Dispatch, SetStateAction, useId } from "react";
+import {
+  ComponentProps,
+  Dispatch,
+  MutableRefObject,
+  SetStateAction,
+  useId,
+  useRef
+} from "react";
 import { twMerge } from "tailwind-merge";
 import { v4 as uuidv4 } from "uuid";
 
@@ -29,6 +36,11 @@ const InputBox = ({
   //
   const amountInputId = useId();
   const currencyChangeId = useId();
+  const amountInputRef = useRef() as MutableRefObject<HTMLInputElement>;
+
+  const onAmountChangeHandler = () => {
+    onAmountChange && onAmountChange(Number(amountInputRef.current.value));
+  };
 
   return (
     <div className={twMerge(`flex rounded-lg bg-white p-3 text-sm`, className)}>
@@ -46,9 +58,8 @@ const InputBox = ({
           placeholder="Amount"
           disabled={amountDisable}
           value={amount}
-          onChange={(e) => {
-            onAmountChange && onAmountChange(Number(e.target.value));
-          }}
+          ref={amountInputRef}
+          onChange={onAmountChangeHandler}
         />
       </div>
       <div className="flex w-1/2 flex-wrap justify-end text-right">
