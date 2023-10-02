@@ -11,9 +11,9 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:import/errors",
     "plugin:jsx-a11y/recommended",
-    "prettier",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
+    "prettier"
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
@@ -22,13 +22,13 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
     project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
+    tsconfigRootDir: __dirname
   },
   settings: { react: { version: "18.2" } },
   rules: {
     "react-refresh/only-export-components": [
       "warn",
-      { allowConstantExport: true },
+      { allowConstantExport: true }
     ],
     "react/prop-types": 0,
     indent: ["error", 2],
@@ -38,5 +38,6 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     "@typescript-eslint/no-use-before-define": "off",
     "react/react-in-jsx-scope": "off",
-  },
+    "no-multiple-empty-lines": [2, { max: 3, maxEOF: 1 }]
+  }
 };
