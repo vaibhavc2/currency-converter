@@ -8,9 +8,9 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Rubik", ...defaultTheme.fontFamily.sans],
-        mono: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
-      },
-    },
+        mono: ["Roboto Mono", ...defaultTheme.fontFamily.mono]
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 };
