@@ -47,7 +47,7 @@ const Home = () => {
               <div className="relative h-0.5 w-full">
                 <button
                   type="button"
-                  className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md border-2 border-white bg-blue-600 px-2 py-0.5 text-white"
+                  className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md border-2 border-white bg-blue-600 px-2 py-0.5 text-white transition-opacity hover:bg-blue-800 hover:opacity-90"
                   onClick={() =>
                     swapCurrency({
                       from,
@@ -77,9 +77,11 @@ const Home = () => {
               </div>
               <button
                 type="submit"
-                className="w-full rounded-lg bg-blue-600 px-4 py-3 text-white"
+                className="w-full rounded-lg bg-blue-600 px-4 py-3 text-white transition-opacity hover:bg-blue-800 hover:opacity-90"
                 onClick={() => {
-                  setConvertedAmount(amount * Number(currencyInfo[to]));
+                  setConvertedAmount(
+                    Number((amount * Number(currencyInfo[to])).toFixed(2))
+                  );
                 }}
               >
                 Convert {`${from.toUpperCase()} to ${to.toUpperCase()}`}

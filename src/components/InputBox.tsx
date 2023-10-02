@@ -41,7 +41,7 @@ const InputBox = ({
         </label>
         <input
           id={amountInputId}
-          className="w-full bg-transparent py-1.5 outline-none"
+          className="w-full bg-transparent py-1.5 font-mono outline-none"
           type="number"
           placeholder="Amount"
           disabled={amountDisable}
@@ -57,7 +57,7 @@ const InputBox = ({
         </label>
         <select
           id={currencyChangeId}
-          className="cursor-pointer rounded-lg bg-gray-100 px-1 py-1 outline-none"
+          className="cursor-pointer rounded-lg bg-gray-100 px-1 py-1 font-mono outline-none"
           value={selectCurrency}
           onChange={(e) => {
             onCurrencyChange && onCurrencyChange(e.target.value);
