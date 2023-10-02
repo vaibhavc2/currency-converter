@@ -38,10 +38,6 @@ const InputBox = ({
   const currencyChangeId = useId();
   const amountInputRef = useRef() as MutableRefObject<HTMLInputElement>;
 
-  const onAmountChangeHandler = () => {
-    onAmountChange && onAmountChange(Number(amountInputRef.current.value));
-  };
-
   return (
     <div className={twMerge(`flex rounded-lg bg-white p-3 text-sm`, className)}>
       <div className="w-1/2">
@@ -59,7 +55,9 @@ const InputBox = ({
           disabled={amountDisable}
           value={amount}
           ref={amountInputRef}
-          onChange={onAmountChangeHandler}
+          onChange={(e) => {
+            onAmountChange && onAmountChange(Number(e.target.value));
+          }}
         />
       </div>
       <div className="flex w-1/2 flex-wrap justify-end text-right">
